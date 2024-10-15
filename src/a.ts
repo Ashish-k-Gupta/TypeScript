@@ -49,6 +49,7 @@ function askHerOut(){
 }
 
 const whatDidSheSay = askHerOut()
+
 console.log(whatDidSheSay)
 // whatDidSheSay[1].
 // console.log(whatDidSheSay)
@@ -60,4 +61,61 @@ console.log(whatDidSheSay)
 //? Think critically: "AND" vs "OR", as it pretains to the contents of the set, 
 // ? vs the assumptions we can make about the value
 
-function pritEve
+ type Evens = 2 | 4 | 6 | 8
+ type OneToFive = 1 | 2 | 3 | 4 | 5
+
+
+function printEven(even: Evens): void{}
+function printLowNumber(lowNum: OneToFive): void{}
+function printEvenNumberUnder5(num: 2 | 4):void{}
+function printNumber(num: number): void{}
+
+let x = 5 as Evens | OneToFive
+/*
+let x = 5 as Evens | OneToFive
+This line declares a variable x and assigns it the value 5. The as keyword is used for type assertion, telling TypeScript to treat the value as a certain type. In this case, it's asserting that 5 is of the union type Evens | OneToFive.
+However, there's an issue here: 5 is not a valid value for the Evens type. This could potentially lead to runtime errors if not handled properly. TypeScript might allow this due to the union with OneToFive, but it's generally not a good practice to assert a value into a type it doesn't belong to.
+
+A safer and more correct approach would be to use a type guard or to simply declare the variable as the union type without assertion:
+
+let x: Evens = 4; // This is valid
+
+
+
+*/
+
+let y: Evens | OneToFive = 5
+
+// ? what does Evens | OneToFive accepts as values?
+let evenOrLowNumber: Evens | OneToFive;
+evenOrLowNumber = 6
+evenOrLowNumber = 3
+evenOrLowNumber = 4
+evenOrLowNumber = 5
+
+//? what requirements can `Evens | OneThroughFive` meet?
+
+printEven(x) //error
+printLowNumber(x) //error
+printEvenNumberUnder5(x) //error
+printNumber(x)
+
+
+// * Narrowing with type guards
+
+const [first, second] = whatDidSheSay
+if(second instanceof Error){
+    second
+}else{
+    second
+}
+
+//* Discriminated Unions
+
+if(first === "error"){
+    // In this branch of yuor code, second is an Error
+    second
+}else{
+    // In this branch of your code, second is the user info
+    second
+}
