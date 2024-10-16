@@ -119,3 +119,29 @@ if(first === "error"){
     // In this branch of your code, second is the user info
     second
 }
+
+
+//* Intersection Types
+
+//? What does Evens & OneThroughFice accept as value?
+
+let evenAndLowNumber: Evens & OneToFive;
+evenAndLowNumber = 2;
+evenAndLowNumber = 3;
+evenAndLowNumber = 4;
+evenAndLowNumber = 6;
+
+
+//? what requirements can `Evens & OneToFive) meet?
+
+let z = 4 as Evens & OneToFive;
+
+
+printEven(z) // Guaranted to be even
+printLowNumber(z) // Guaranteed to be in {1,2,3,4,5} 
+printEvenNumberUnder5(z) // Guaranteed to be in {2,4}
+printNumber(z) // Guaranteed to be a number
+
+
+
+
