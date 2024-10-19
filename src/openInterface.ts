@@ -36,6 +36,3 @@ window.document
 window.exampleProperty  = 42;
 
 
-//* Recursive type
-
-type NestedNumbe = number | NestedNumbe[]
