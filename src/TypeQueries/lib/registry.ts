@@ -1,5 +1,6 @@
 export interface DataTypeRegistry{
     // empty by design
+
 }
 
 // the "& string" is just a trick to get
@@ -7,7 +8,7 @@ export interface DataTypeRegistry{
 
 export function fetchRecord(
     arg: keyof DataTypeRegistry & string,
-    id: string
+    id: string,
 ){}
 
 // compare this snippet from packages/notes-ts-fundamentals
